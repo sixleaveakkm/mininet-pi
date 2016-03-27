@@ -15,7 +15,7 @@ Test items:
 
 from mininet.net import Mininet
 from mininet.topo import Topo
-from mininet.node import OVSSwitch , OVSController, Ryu
+from mininet.node import OVSSwitch , OVSController, Ryu, RemoteController
 from mininet.cli import CLI
 
 
@@ -27,14 +27,14 @@ h1 = topo.addNode('h1')
 h2 = topo.addNode('h2')
 h3 = topo.addNode('h3')
 
-c1 = Ryu('c1',port=6633)
+c1 = RemoteController('c1',port=6633)
 
 topo.addLink(s1 , h1)
 topo.addLink(s2 , h2)
 topo.addLink(s2 , h3)
 topo.addLink(s1 , s2)
 
-net = Mininet(topo=topo, switch=OVSSwitch)
+net = Mininet(topo=topo, switch=OVSSwitch, build=False)
 net.addController(c1)
 net.build()
 net.start()
