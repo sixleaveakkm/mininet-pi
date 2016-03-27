@@ -1,0 +1,335 @@
+secchan/secchan.o: secchan/secchan.c /usr/include/stdc-predef.h config.h \
+ secchan/secchan.h /usr/include/regex.h \
+ /usr/include/arm-linux-gnueabihf/sys/types.h /usr/include/features.h \
+ /usr/include/arm-linux-gnueabihf/sys/cdefs.h \
+ /usr/include/arm-linux-gnueabihf/bits/wordsize.h \
+ /usr/include/arm-linux-gnueabihf/gnu/stubs.h \
+ /usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h \
+ /usr/include/arm-linux-gnueabihf/bits/types.h \
+ /usr/include/arm-linux-gnueabihf/bits/typesizes.h /usr/include/time.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/5/include/stddef.h \
+ /usr/include/endian.h /usr/include/arm-linux-gnueabihf/bits/endian.h \
+ /usr/include/arm-linux-gnueabihf/bits/byteswap.h \
+ /usr/include/arm-linux-gnueabihf/bits/byteswap-16.h \
+ /usr/include/arm-linux-gnueabihf/sys/select.h \
+ /usr/include/arm-linux-gnueabihf/bits/select.h \
+ /usr/include/arm-linux-gnueabihf/bits/sigset.h \
+ /usr/include/arm-linux-gnueabihf/bits/time.h \
+ /usr/include/arm-linux-gnueabihf/bits/select2.h \
+ /usr/include/arm-linux-gnueabihf/sys/sysmacros.h \
+ /usr/include/arm-linux-gnueabihf/bits/pthreadtypes.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/5/include/stdbool.h lib/list.h \
+ lib/util.h /usr/lib/gcc/arm-linux-gnueabihf/5/include/stdarg.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/5/include/stdint.h \
+ /usr/include/stdint.h /usr/include/arm-linux-gnueabihf/bits/wchar.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h /usr/include/arm-linux-gnueabihf/bits/stdio_lim.h \
+ /usr/include/arm-linux-gnueabihf/bits/sys_errlist.h \
+ /usr/include/arm-linux-gnueabihf/bits/stdio.h \
+ /usr/include/arm-linux-gnueabihf/bits/stdio2.h /usr/include/string.h \
+ /usr/include/xlocale.h /usr/include/arm-linux-gnueabihf/bits/string.h \
+ /usr/include/arm-linux-gnueabihf/bits/string2.h /usr/include/stdlib.h \
+ /usr/include/arm-linux-gnueabihf/bits/string3.h lib/compiler.h \
+ lib/packets.h lib/random.h /usr/include/assert.h /usr/include/errno.h \
+ /usr/include/arm-linux-gnueabihf/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/arm-linux-gnueabihf/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/getopt.h /usr/include/netinet/in.h \
+ /usr/include/arm-linux-gnueabihf/sys/socket.h \
+ /usr/include/arm-linux-gnueabihf/sys/uio.h \
+ /usr/include/arm-linux-gnueabihf/bits/uio.h \
+ /usr/include/arm-linux-gnueabihf/bits/socket.h \
+ /usr/include/arm-linux-gnueabihf/bits/socket_type.h \
+ /usr/include/arm-linux-gnueabihf/bits/sockaddr.h \
+ /usr/include/arm-linux-gnueabihf/asm/socket.h \
+ /usr/include/asm-generic/socket.h \
+ /usr/include/arm-linux-gnueabihf/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
+ /usr/include/arm-linux-gnueabihf/bits/socket2.h \
+ /usr/include/arm-linux-gnueabihf/bits/in.h \
+ /usr/include/arm-linux-gnueabihf/bits/waitflags.h \
+ /usr/include/arm-linux-gnueabihf/bits/waitstatus.h /usr/include/alloca.h \
+ /usr/include/arm-linux-gnueabihf/bits/stdlib-bsearch.h \
+ /usr/include/arm-linux-gnueabihf/bits/stdlib-float.h \
+ /usr/include/arm-linux-gnueabihf/bits/stdlib.h /usr/include/signal.h \
+ /usr/include/arm-linux-gnueabihf/bits/signum.h \
+ /usr/include/arm-linux-gnueabihf/bits/siginfo.h \
+ /usr/include/arm-linux-gnueabihf/bits/sigaction.h \
+ /usr/include/arm-linux-gnueabihf/bits/sigcontext.h \
+ /usr/include/arm-linux-gnueabihf/asm/sigcontext.h \
+ /usr/include/arm-linux-gnueabihf/bits/sigstack.h \
+ /usr/include/arm-linux-gnueabihf/sys/ucontext.h \
+ /usr/include/arm-linux-gnueabihf/bits/sigthread.h lib/command-line.h \
+ lib/compiler.h lib/daemon.h lib/dirs.h secchan/discovery.h \
+ secchan/emerg-flow.h secchan/fail-open.h secchan/failover.h lib/fault.h \
+ secchan/in-band.h lib/leak-checker.h lib/ofpbuf.h \
+ include/openflow/openflow.h secchan/protocol-stat.h \
+ secchan/port-watcher.h lib/poll-loop.h /usr/include/poll.h \
+ /usr/include/arm-linux-gnueabihf/sys/poll.h \
+ /usr/include/arm-linux-gnueabihf/bits/poll.h \
+ /usr/include/arm-linux-gnueabihf/bits/poll2.h secchan/ratelimit.h \
+ lib/rconn.h lib/queue.h /usr/include/arm-linux-gnueabihf/bits/timex.h \
+ secchan/stp-secchan.h secchan/status.h lib/timeval.h lib/type-props.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/5/include-fixed/limits.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/5/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/arm-linux-gnueabihf/bits/posix1_lim.h \
+ /usr/include/arm-linux-gnueabihf/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/arm-linux-gnueabihf/bits/posix2_lim.h \
+ /usr/include/arm-linux-gnueabihf/bits/xopen_lim.h lib/util.h \
+ lib/vconn-ssl.h lib/vconn.h lib/vlog-socket.h lib/vlog.h \
+ lib/vlog-modules.def
+
+/usr/include/stdc-predef.h:
+
+config.h:
+
+secchan/secchan.h:
+
+/usr/include/regex.h:
+
+/usr/include/arm-linux-gnueabihf/sys/types.h:
+
+/usr/include/features.h:
+
+/usr/include/arm-linux-gnueabihf/sys/cdefs.h:
+
+/usr/include/arm-linux-gnueabihf/bits/wordsize.h:
+
+/usr/include/arm-linux-gnueabihf/gnu/stubs.h:
+
+/usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h:
+
+/usr/include/arm-linux-gnueabihf/bits/types.h:
+
+/usr/include/arm-linux-gnueabihf/bits/typesizes.h:
+
+/usr/include/time.h:
+
+/usr/lib/gcc/arm-linux-gnueabihf/5/include/stddef.h:
+
+/usr/include/endian.h:
+
+/usr/include/arm-linux-gnueabihf/bits/endian.h:
+
+/usr/include/arm-linux-gnueabihf/bits/byteswap.h:
+
+/usr/include/arm-linux-gnueabihf/bits/byteswap-16.h:
+
+/usr/include/arm-linux-gnueabihf/sys/select.h:
+
+/usr/include/arm-linux-gnueabihf/bits/select.h:
+
+/usr/include/arm-linux-gnueabihf/bits/sigset.h:
+
+/usr/include/arm-linux-gnueabihf/bits/time.h:
+
+/usr/include/arm-linux-gnueabihf/bits/select2.h:
+
+/usr/include/arm-linux-gnueabihf/sys/sysmacros.h:
+
+/usr/include/arm-linux-gnueabihf/bits/pthreadtypes.h:
+
+/usr/lib/gcc/arm-linux-gnueabihf/5/include/stdbool.h:
+
+lib/list.h:
+
+lib/util.h:
+
+/usr/lib/gcc/arm-linux-gnueabihf/5/include/stdarg.h:
+
+/usr/lib/gcc/arm-linux-gnueabihf/5/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/arm-linux-gnueabihf/bits/wchar.h:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/include/arm-linux-gnueabihf/bits/stdio_lim.h:
+
+/usr/include/arm-linux-gnueabihf/bits/sys_errlist.h:
+
+/usr/include/arm-linux-gnueabihf/bits/stdio.h:
+
+/usr/include/arm-linux-gnueabihf/bits/stdio2.h:
+
+/usr/include/string.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/arm-linux-gnueabihf/bits/string.h:
+
+/usr/include/arm-linux-gnueabihf/bits/string2.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/arm-linux-gnueabihf/bits/string3.h:
+
+lib/compiler.h:
+
+lib/packets.h:
+
+lib/random.h:
+
+/usr/include/assert.h:
+
+/usr/include/errno.h:
+
+/usr/include/arm-linux-gnueabihf/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/arm-linux-gnueabihf/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/getopt.h:
+
+/usr/include/netinet/in.h:
+
+/usr/include/arm-linux-gnueabihf/sys/socket.h:
+
+/usr/include/arm-linux-gnueabihf/sys/uio.h:
+
+/usr/include/arm-linux-gnueabihf/bits/uio.h:
+
+/usr/include/arm-linux-gnueabihf/bits/socket.h:
+
+/usr/include/arm-linux-gnueabihf/bits/socket_type.h:
+
+/usr/include/arm-linux-gnueabihf/bits/sockaddr.h:
+
+/usr/include/arm-linux-gnueabihf/asm/socket.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/arm-linux-gnueabihf/asm/sockios.h:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/arm-linux-gnueabihf/bits/socket2.h:
+
+/usr/include/arm-linux-gnueabihf/bits/in.h:
+
+/usr/include/arm-linux-gnueabihf/bits/waitflags.h:
+
+/usr/include/arm-linux-gnueabihf/bits/waitstatus.h:
+
+/usr/include/alloca.h:
+
+/usr/include/arm-linux-gnueabihf/bits/stdlib-bsearch.h:
+
+/usr/include/arm-linux-gnueabihf/bits/stdlib-float.h:
+
+/usr/include/arm-linux-gnueabihf/bits/stdlib.h:
+
+/usr/include/signal.h:
+
+/usr/include/arm-linux-gnueabihf/bits/signum.h:
+
+/usr/include/arm-linux-gnueabihf/bits/siginfo.h:
+
+/usr/include/arm-linux-gnueabihf/bits/sigaction.h:
+
+/usr/include/arm-linux-gnueabihf/bits/sigcontext.h:
+
+/usr/include/arm-linux-gnueabihf/asm/sigcontext.h:
+
+/usr/include/arm-linux-gnueabihf/bits/sigstack.h:
+
+/usr/include/arm-linux-gnueabihf/sys/ucontext.h:
+
+/usr/include/arm-linux-gnueabihf/bits/sigthread.h:
+
+lib/command-line.h:
+
+lib/compiler.h:
+
+lib/daemon.h:
+
+lib/dirs.h:
+
+secchan/discovery.h:
+
+secchan/emerg-flow.h:
+
+secchan/fail-open.h:
+
+secchan/failover.h:
+
+lib/fault.h:
+
+secchan/in-band.h:
+
+lib/leak-checker.h:
+
+lib/ofpbuf.h:
+
+include/openflow/openflow.h:
+
+secchan/protocol-stat.h:
+
+secchan/port-watcher.h:
+
+lib/poll-loop.h:
+
+/usr/include/poll.h:
+
+/usr/include/arm-linux-gnueabihf/sys/poll.h:
+
+/usr/include/arm-linux-gnueabihf/bits/poll.h:
+
+/usr/include/arm-linux-gnueabihf/bits/poll2.h:
+
+secchan/ratelimit.h:
+
+lib/rconn.h:
+
+lib/queue.h:
+
+/usr/include/arm-linux-gnueabihf/bits/timex.h:
+
+secchan/stp-secchan.h:
+
+secchan/status.h:
+
+lib/timeval.h:
+
+lib/type-props.h:
+
+/usr/lib/gcc/arm-linux-gnueabihf/5/include-fixed/limits.h:
+
+/usr/lib/gcc/arm-linux-gnueabihf/5/include-fixed/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/arm-linux-gnueabihf/bits/posix1_lim.h:
+
+/usr/include/arm-linux-gnueabihf/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/arm-linux-gnueabihf/bits/posix2_lim.h:
+
+/usr/include/arm-linux-gnueabihf/bits/xopen_lim.h:
+
+lib/util.h:
+
+lib/vconn-ssl.h:
+
+lib/vconn.h:
+
+lib/vlog-socket.h:
+
+lib/vlog.h:
+
+lib/vlog-modules.def:

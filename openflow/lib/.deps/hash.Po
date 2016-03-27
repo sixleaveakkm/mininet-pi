@@ -1,0 +1,48 @@
+lib/hash.o: lib/hash.c /usr/include/stdc-predef.h config.h lib/hash.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/5/include/stddef.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/5/include/stdint.h \
+ /usr/include/stdint.h /usr/include/features.h \
+ /usr/include/arm-linux-gnueabihf/sys/cdefs.h \
+ /usr/include/arm-linux-gnueabihf/bits/wordsize.h \
+ /usr/include/arm-linux-gnueabihf/gnu/stubs.h \
+ /usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h \
+ /usr/include/arm-linux-gnueabihf/bits/wchar.h /usr/include/string.h \
+ /usr/include/xlocale.h /usr/include/arm-linux-gnueabihf/bits/string.h \
+ /usr/include/arm-linux-gnueabihf/bits/string2.h /usr/include/stdlib.h \
+ /usr/include/arm-linux-gnueabihf/bits/string3.h
+
+/usr/include/stdc-predef.h:
+
+config.h:
+
+lib/hash.h:
+
+/usr/lib/gcc/arm-linux-gnueabihf/5/include/stddef.h:
+
+/usr/lib/gcc/arm-linux-gnueabihf/5/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/features.h:
+
+/usr/include/arm-linux-gnueabihf/sys/cdefs.h:
+
+/usr/include/arm-linux-gnueabihf/bits/wordsize.h:
+
+/usr/include/arm-linux-gnueabihf/gnu/stubs.h:
+
+/usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h:
+
+/usr/include/arm-linux-gnueabihf/bits/wchar.h:
+
+/usr/include/string.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/arm-linux-gnueabihf/bits/string.h:
+
+/usr/include/arm-linux-gnueabihf/bits/string2.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/arm-linux-gnueabihf/bits/string3.h:
