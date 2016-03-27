@@ -20,7 +20,7 @@ block_ports = set()
 def block_handler (event):
 	#Handles packet event and kills the ones with a blocked port number
 
-	tcpp = event.parsed.find('tcp')
+	tcpp = event.parπsed.find('tcp')
 	if not tcpp: return # Not TCP
 	if tcpp.srcport in block_ports or tcpp.dstport in block_ports:
 		#Halt the event, stopping l2_learning from seeing it
@@ -30,12 +30,12 @@ def block_handler (event):
 		event.halt = True
 
 def unblock (*ports):
-	block.ports.difference_update(ports)
+	block_ports.difference_update(ports)
 
-def block (*ports)
+def block (*ports):
 	block_ports.update(ports)
 
-def launch(ports = '')
+def launch(ports = ''):
 
 	#Add ports from commandline to list of ports to block
 	block_ports.update(int(x) for x in ports.replce(",", " ").split())

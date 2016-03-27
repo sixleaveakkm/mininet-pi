@@ -34,7 +34,7 @@ topo.addLink(s2 , h2)
 topo.addLink(s2 , h3)
 topo.addLink(s1 , s2)
 
-net = Mininet(topo=topo, switch=OVSSwitch,build=false)
+net = Mininet(topo=topo, switch=OVSSwitch)
 net.addController(c1)
 net.build()
 net.start()
