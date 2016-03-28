@@ -26,12 +26,14 @@ s2 = topo.addSwitch('s2' , cls=OVSSwitch)
 h1 = topo.addNode('h1')
 h2 = topo.addNode('h2')
 h3 = topo.addNode('h3')
+h4 = topo.addNode('h4')
 
 c1 = RemoteController('c1',port=6633)
 
 topo.addLink(s1 , h1)
 topo.addLink(s2 , h2)
 topo.addLink(s2 , h3)
+topo.addLink(s2 , h4)
 topo.addLink(s1 , s2)
 
 net = Mininet(topo=topo, switch=OVSSwitch, build=False)
