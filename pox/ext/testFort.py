@@ -17,13 +17,13 @@ class ConnectionUp(Event):
         self.dpid = connection.dpid
         self.ofp = ofp
         connections.add(connection)
-        connected.add({'dpid':connection.dpid,'instance':Event})
+        #connected.add({'dpid':connection.dpid,'instance':Event})
 class ConnectionDown(Event):
     def __init__(self,connection,ofp):
         Event.__init__(self)
         self.connection = connection
         self.dpid = connection.dpid
-        connected.remove({'dpid':connection.dpid,'instance':Event})
+        #connected.remove({'dpid':connection.dpid,'instance':Event})
 class MyComponent(object):
     def __init__(self):
         core.openflow.addListeners(self)
@@ -62,7 +62,7 @@ def packet_handler (event):
     add_mac(event.parsed.dst)
 
     if match_pattern(event.parsed):
-        core.getLogger("***Packet matches firewall pattern. BLOCKED")
+        log.info("***Packet matches firewall pattern. BLOCKED")
         return EventHalt
 def flow_add():
     my_match = of.ofp_match()
@@ -72,6 +72,7 @@ def flow_add():
     msg.match = my_match
     msg.actions.append(of.ofp_nw_addr.set_src(IPAddr("10.0.0.2")))
     for conn in connections:
+        log.info("in connections loop")
         conn.send(msg)
 def launch():
     core.registerNew(MyComponent)
