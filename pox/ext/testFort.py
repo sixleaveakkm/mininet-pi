@@ -75,5 +75,5 @@ def flow_add():
         conn.send(msg)
 def launch():
     core.registerNew(MyComponent)
-    core.openflow.addListenerByName("PacketIn", block_handler)
+    core.openflow.addListenerByName("PacketIn", packet_handler)
     core.Interactive.variables['flow_add'] = flow_add
