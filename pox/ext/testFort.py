@@ -9,12 +9,14 @@ log = core.getLogger()
 
 #parts to identify switches dpid
 connected = set()
+connections = set()
 class ConnectionUp(Event):
     def __init__(self,connection,ofp):
         Event.__init__(self)
         self.connection = connection
         self.dpid = connection.dpid
         self.ofp = ofp
+        connections.add(connection)
         connected.add({'dpid':connection.dpid,'instance':Event})
 class ConnectionDown(Event):
     def __init__(self,connection,ofp):
@@ -51,6 +53,12 @@ def add_pattern(pattern):
 
 def match_pattern(parsed):
     #todo
+    if parsed.src == "10.0.0.1":
+        core.getLogger("packet src - 1")
+    if parsed.src == EthAddr("10.0.0.1"):
+        core.getLogger("packet src - 1 type 2")
+    if parsed.dst == "10.0.0.3":
+        core.getLogger("packet dst - 3")
     if parsed.src == "10.0.0.1" and parsed.dst == "10.0.0.3":
         return True
 
@@ -61,7 +69,16 @@ def packet_handler (event):
     if match_pattern(event.parsed):
         core.getLogger("***Packet matches firewall pattern. BLOCKED")
         return EventHalt
-
+def flow_add():
+    my_match = of.ofp_match()
+    my_match.nw_src = "10.0.0.1"
+    my_match.nw_dst = "10.0.0.3"
+    msg = ofp_flow_mod()
+    msg.match = my_match
+    msg.actions.append(of.ofp_nw_addr.set_src(IPAddr("10.0.0.2")))
+    for conn in connections:
+        conn.send(msg)
 def launch():
     core.registerNew(MyComponent)
     core.openflow.addListenerByName("PacketIn", block_handler)
+    core.Interactive.variables['flow_add'] = flow_add
