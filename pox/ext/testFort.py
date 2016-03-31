@@ -2,7 +2,7 @@
 from pox.core import core
 from pox.lib.util import dpid_to_str
 from pox.lib.revent import *
-from pox.lib.addresses import EthAddr
+from pox.lib.addresses import EthAddr, IPAddr
 import pox.openflow.libopenflow_01 as of
 
 log = core.getLogger()
@@ -17,13 +17,13 @@ class ConnectionUp(Event):
         self.dpid = connection.dpid
         self.ofp = ofp
         connections.add(connection)
-        #connected.add({'dpid':connection.dpid,'instance':Event})
+        connected.add(connection.dpid)
 class ConnectionDown(Event):
     def __init__(self,connection,ofp):
         Event.__init__(self)
         self.connection = connection
         self.dpid = connection.dpid
-        #connected.remove({'dpid':connection.dpid,'instance':Event})
+        connected.remove(connection.dpid)
 class MyComponent(object):
     def __init__(self):
         core.openflow.addListeners(self)
@@ -53,9 +53,10 @@ def add_pattern(pattern):
 
 def match_pattern(parsed):
     #todo
-    ipv4v = parsed.find('ipv4')
-    if ipv4v.srcip == "10.0.0.1" and ipv4v.dstip == "10.0.0.3":
-        return True
+	ipv4v = parsed.find('ipv4')
+	if not ipv4v: return
+	if ipv4v.srcip == "10.0.0.1" and ipv4v.dstip == "10.0.0.3":
+		return True
 
 def packet_handler (event):
     add_mac(event.parsed.src)
@@ -65,15 +66,18 @@ def packet_handler (event):
         log.info("***Packet matches firewall pattern. BLOCKED")
         return EventHalt
 def flow_add():
-    my_match = of.ofp_match()
-    my_match.nw_src = "10.0.0.1"
-    my_match.nw_dst = "10.0.0.3"
-    msg = ofp_flow_mod()
-    msg.match = my_match
-    msg.actions.append(of.ofp_nw_addr.set_src(IPAddr("10.0.0.2")))
-    for conn in connections:
-        log.info("in connections loop")
-        conn.send(msg)
+	log.info("enter flow_add")
+	my_match = of.ofp_match()
+	my_match.nw_src = "10.0.0.1"
+	my_match.nw_dst = "10.0.0.3"
+	msg = of.ofp_flow_mod()
+	msg.match = my_match
+	msg.actions.append(of.ofp_action_nw_addr.set_src(IPAddr("10.0.0.2")))
+	log.info("msg builded")
+	for conn in core.openflow.connections:
+		log.info("in connections loop")
+		conn.send(msg)
+	log.info("flow_add out")
 def launch():
     core.registerNew(MyComponent)
     core.openflow.addListenerByName("PacketIn", packet_handler)
