@@ -53,13 +53,8 @@ def add_pattern(pattern):
 
 def match_pattern(parsed):
     #todo
-    if parsed.src == "10.0.0.1":
-        core.getLogger("packet src - 1")
-    if parsed.src == EthAddr("10.0.0.1"):
-        core.getLogger("packet src - 1 type 2")
-    if parsed.dst == "10.0.0.3":
-        core.getLogger("packet dst - 3")
-    if parsed.src == "10.0.0.1" and parsed.dst == "10.0.0.3":
+    ipv4v = parsed.find('ipv4')
+    if ipv4v.srcip == "10.0.0.1" and ipv4v.dstip == "10.0.0.3":
         return True
 
 def packet_handler (event):
