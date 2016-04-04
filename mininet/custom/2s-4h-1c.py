@@ -2,14 +2,11 @@
 
 Two directly connected switches plus a host for each switch , with controller:
 
-   h1 --- s1 ---------- s2 ---  h2
-            \           / \
-             \         /   \ h3
+   h1 --- s1 ---------- s2 ---  h4
+         /  \           / \
+      h2/    \         /   \ h3
               controller
 
-
-Test items:
-* pingall
 
 """
 
