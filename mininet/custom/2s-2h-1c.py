@@ -31,7 +31,7 @@ h4 = topo.addNode('h4')
 c1 = RemoteController('c1',port=6633)
 
 topo.addLink(s1 , h1)
-topo.addLink(s2 , h2)
+topo.addLink(s1 , h2)
 topo.addLink(s2 , h3)
 topo.addLink(s2 , h4)
 topo.addLink(s1 , s2)

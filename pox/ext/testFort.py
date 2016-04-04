@@ -53,9 +53,14 @@ def add_pattern(pattern):
 
 def match_pattern(parsed):
     #todo
+	mark = False
 	ipv4v = parsed.find('ipv4')
+	tcpp = parsed.find('tcp')
 	if not ipv4v: return
-	if ipv4v.srcip == "10.0.0.1" and ipv4v.dstip == "10.0.0.3":
+	if not tcpp: return
+	if ipv4v.srcip == "10.0.0.2" and ipv4v.dstip == "10.0.0.4":
+		mark = True
+	if tcpp.dstport == 80 and mark == True:
 		return True
 
 def packet_handler (event):
@@ -66,18 +71,35 @@ def packet_handler (event):
         log.info("***Packet matches firewall pattern. BLOCKED")
         return EventHalt
 def flow_add():
-	log.info("enter flow_add")
 	my_match = of.ofp_match()
-	my_match.nw_src = "10.0.0.1"
-	my_match.nw_dst = "10.0.0.3"
+	my_match.nw_src = IPAddr("10.0.0.2")
+	my_match.nw_dst = IPAddr("10.0.0.3")
+	my_match.dl_type=0x800
 	msg = of.ofp_flow_mod()
 	msg.match = my_match
-	msg.actions.append(of.ofp_action_nw_addr.set_src(IPAddr("10.0.0.2")))
+	msg.actions.append(of.ofp_action_nw_addr.set_src(IPAddr("10.0.0.4")))
 	log.info("msg builded")
 	for conn in core.openflow.connections:
 		log.info("in connections loop")
 		conn.send(msg)
-	log.info("flow_add out")
+	match_2 = of.ofp_match()
+	match_2.nw_src = IPAddr("10.0.0.1")
+	match_2.nw_dst = IPAddr("10.0.0.4")
+	match_2.dl_type = 0x800
+	msg2 = of.ofp_flow_mod()
+	msg2.match = match_2
+	msg2.actions.append(of.ofp_action_nw_addr.set_dst(IPAddr("10.0.0.4")))
+	for conn in core.openflow.connections:
+		conn.send(msg2)
+	match3 = of.ofp_match()
+	match3.nw_src = IPAddr("10.0.0.4")
+	match3.nw_dst = IPAddr("10.0.0.1")
+	match3.dl_type = 0x800
+	msg3 = of.ofp_flow_mod()
+	msg3.match = match3
+	msg3.actions.append(of.ofp_action_nw_addr.set_dst(IPAddr("10.0.0.2")))
+	for conn in core.openflow.connections:
+		conn.send(msg3)
 def launch():
     core.registerNew(MyComponent)
     core.openflow.addListenerByName("PacketIn", packet_handler)
